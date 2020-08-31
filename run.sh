@@ -121,4 +121,5 @@ then
   restore_dir="--restore_dir ${restore_dir} ${restore_trainable}"
 fi
 #exec python3 001_sharing.py --tpu "${tpu}" --model_dir "${model_dir}" --restore_dir "${restore_dir}" --params "${params}" "$@"
-exec python3 -m pdb -c continue main_gpt2.py --tpu "${tpu}" --model_dir "${model_dir}" ${restore_dir} --params "${params}" --num_cores "${TPU_CORES}" ${dataset} "$@"
+#exec python3 -m pdb -c continue main_gpt2.py --tpu "${tpu}" --model_dir "${model_dir}" ${restore_dir} --params "${params}" --num_cores "${TPU_CORES}" ${dataset} "$@"
+exec python3 main_gpt2.py --tpu "${tpu}" --model_dir "${model_dir}" ${restore_dir} --params "${params}" --num_cores "${TPU_CORES}" ${dataset} "$@"
