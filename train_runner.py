@@ -33,7 +33,10 @@ from tensorflow.core.protobuf import rewriter_config_pb2
 from tensorflow.python.data.util import nest as data_nest
 from tensorflow.python.framework import graph_io
 
+from pprint import pprint as pp
+
 FLAGS = flags.FLAGS
+pp([ 'FLAGS', FLAGS ])
 
 _INITIAL_LOSS = 1e7
 

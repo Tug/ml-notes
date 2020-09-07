@@ -86,8 +86,8 @@ def main(unused_argv):
     l = tf.broadcast_to(labels, [len(labels), len(labels[0])])
     #dset1 = tf.data.Dataset.from_tensor_slices(t);
     #dset2 = tf.data.Dataset.from_tensor_slices(l);
-    dset1 = tf.data.Dataset.from_tensors(t);
-    dset2 = tf.data.Dataset.from_tensors(l);
+    dset1 = tf.data.Dataset.from_tensors(t)
+    dset2 = tf.data.Dataset.from_tensors(l)
     dset = tf.data.Dataset.zip((dset1, dset2))
     dset = dset.repeat()
     return dset
