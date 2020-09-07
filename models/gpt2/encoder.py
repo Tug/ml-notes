@@ -48,9 +48,8 @@ class Encoder:
         self.byte_decoder = {v:k for k, v in self.byte_encoder.items()}
         self.bpe_ranks = dict(zip(bpe_merges, range(len(bpe_merges))))
         self.cache = {}
-
-        # Should haved added re.IGNORECASE so BPE merges can happen for capitalized versions of contractions
-        self.pat = re.compile(r"""'s|'t|'re|'ve|'m|'ll|'d| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+""")
+        
+        self.pat = re.compile(r""" ?j['|’]| ?t['|’]| ?s['|’]| ?c['|’]| ?m['|’]| ?n['|’]| ?l['|’]| ?d['|’]| ?qu['|’]| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+""")
 
     def bpe(self, token):
         if token in self.cache:
